@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+    <div class="jumbotron jumbotron mx-auto rounded lg-5">
+      <div class="container">
+        <h1 class="display-4">The best Burgers in Town!</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="text-center">Burgers to Choose</h2>
+        <hr>
+      <ul>
+          {{#each burgers}}
+              {{#unless devoured}}
+                  {{> burgers/burgers-block devoured=true}}
+              {{/unless}}
+          {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h2 class="text-center">Grab a burger</h2>
+      <br>
+      <form class="create-form">
+
+        <div class="form-group text-center">
+          <label for="ca"> <h4>Burger Type:</h3></label>
+          <input class="form-control" type="text" id="ca" name="name">
+        </div>
+
+        <button class="btn btn btn-lg btn-secondary btn-block" type="submit">Order Burger</button>
+      </form>
+    </div>    
+
+    <div class="col-md-4">
+      <h2 class="text-center">Burgers Consumed</h2>
+      <hr>
+
+      <ul>
+          {{#each burgers}}
+              {{#if devoured}}
+                  {{> burgers/burgers-block devoured=false}}
+              {{/if}} 
+          {{/each}}
+      </ul>
+    </div>
+
+  </div>
+</div>

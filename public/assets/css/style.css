@@ -1,0 +1,12 @@
+body {
+    background-image: url("../img/food.png");
+    background-repeat: repeat;
+}
+
+li {
+    list-style-type: none;
+}
+
+.jumbotron {
+    color: orange;
+}

@@ -1,25 +1,25 @@
 var orm = require('../config/orm.js');
 
 var burger = {
-    all: function(cb) {
+    all: function(dragonball) {
         orm.all("burgers", function(res) {
-            cb(res);
+            dragonball(res);
         });
     },
     // The variables cols and vals are arrays.
-    create: function(cols, vals, cb) {
+    create: function(cols, vals, dragonball) {
         orm.create("burgers", cols, vals, function(res) {
-            cb(res);
+            dragonball(res);
         });
     },
-    update: function(objColVals, condition, cb) {
+    update: function(objColVals, condition, dragonball) {
         orm.update("burgers", objColVals, condition, function(res) {
-            cb(res);
+            dragonball(res);
         });
     },
-    delete: function(condition, cb) {
+    delete: function(condition, dragonball) {
         orm.delete("burgers", condition, function(res) {
-            cb(res);
+            dragonball(res);
         });
     }
 };

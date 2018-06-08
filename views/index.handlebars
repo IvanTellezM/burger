@@ -1,29 +1,32 @@
 <div class="container">
 
   <div class="row">
-    <div class="jumbotron jumbotron mx-auto rounded lg-5">
+    <div class="jumbotron jumbotron mx-auto rounded mt-5">
       <div class="container">
-        <h1 class="display-4">The best Burgers in Town!</h1>
+        <h1 class="display-4">Eat-Da-Burger!</h1>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-4">
-      <h2 class="text-center">Burgers to Choose</h2>
+      <h2 class="text-center">Burgers Available</h2>
         <hr>
       <ul>
           {{#each burgers}}
               {{#unless devoured}}
-                  {{> burgers/burgers-block devoured=true}}
+                <li>
+                  {{this.name_burger}}
+                   <button class='devour' data-id='{{this.id}}'>Devour</button>
+                </li>
               {{/unless}}
           {{/each}}
       </ul>
     </div>
 
     <div class="col-md-4">
-      <h2 class="text-center">Grab a burger</h2>
-      <br>
+      <h2 class="text-center">Add a burger</h2>
+      <hr>
       <form class="create-form">
 
         <div class="form-group text-center">
@@ -31,7 +34,7 @@
           <input class="form-control" type="text" id="ca" name="name">
         </div>
 
-        <button class="btn btn btn-lg btn-secondary btn-block" type="submit">Order Burger</button>
+        <button class="btn btn btn-lg btn-secondary btn-block" type="submit">Submit</button>
       </form>
     </div>    
 
@@ -42,7 +45,7 @@
       <ul>
           {{#each burgers}}
               {{#if devoured}}
-                  {{> burgers/burgers-block devoured=false}}
+                <li>{{this.name_burger}}</li>
               {{/if}} 
           {{/each}}
       </ul>

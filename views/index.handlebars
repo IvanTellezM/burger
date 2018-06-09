@@ -1,69 +1,34 @@
-<div class="container">
-	<div class="jumbotron">
-  		<h1 class="text-center">Burger, I'd Like to eat...</h1>
-  		<form class="text-center" action="/" method="POST">
-  			<div class="form-group">
-    			<input type="text" class="form-control" id="burgerInput" name="name" placeholder="Nom Nom">
-  			</div>
-    		<button class="btn btn-default btn-danger" type="submit">Make Da Burger</button>
+<h1>Eat-Da-Burger!</h1>
 
-		</form>
-	</div>
-	<div class="row">
-	<div class="col-lg-4 col-md-4 col-sm-4">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title text-center">Please</h3>
-			</div>
-			<div class="panel-body">
-				<ul class="list-group">
-    			{{#each burgers}}
-    				{{#unless this.devoured}}
-					<li class="list-group-item">
-						<p class="burger-name">{{this.name}}</p>
-						<form class="pull-right" action="/{{this.id}}?_method=PUT" method="POST">
-          					<input type="hidden" name="devoured" value="true">
-          					<button class="btn btn-default btn-danger" type="submit">Eat!</button>
-        				</form>
-        			</li>
-        			{{/unless}}
-				{{/each}}
-				</ul>
-  			</div>
-		</div>
-	</div>
-	<div class="col-lg-4 col-md-4 col-sm-4">
-	<div class="hero panel panel-default">
-		<div class="panel-heading">
-				<h3 class="panel-title text-center">Eat Me</h3>
-		</div>
-		<div class="panel-body">
-			<img class="img-responsive" src="../assets/img/burger.jpg" />
-		</div>
-	</div>
-	</div>
-	<div class="col-lg-4 col-md-4 col-sm-4">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title text-center">Thank You</h3>
-		</div>
-		<div class="panel-body">
-		<ul class="list-group">
-    			{{#each burgers}}
-    				{{#if this.devoured}}
-					<li class="list-group-item">
-						<p class="burger-name">{{this.name}}</p>
-						<form class="pull-right" action="/{{this.id}}?_method=DELETE" method="POST">
-          					<button class="btn btn-default btn-danger" type="submit">Delet!</button>
-        				</form>
-        			</li>
-        			{{/if}}
-				{{/each}}
-				</ul>
-		</div>
-	</div>
-	</div>
-	</div>
-	
+<h3>Available Burgers:</h3>
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      <li>
+        {{this.burger_name}}
+        <button class='devour' data-id='{{this.id}}'>Devoure it!</button>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
 
-</div>
+<h2>Old Burgers:</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>{{this.burger_name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Order a New Burger</h2>
+<form class="target-burger">
+
+  <div class="form-group">
+    <label for="newPlanet">Burger:</label>
+    <input type="text" id="newBurger" name="name">
+  </div>
+
+  <button type="submit">Making new Burger!</button>
+</form>

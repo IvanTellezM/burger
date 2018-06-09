@@ -1,9 +1,5 @@
-.hero {
-    background-color: #1e8ad2;
-}
-
-.burger-name {
-    display: inline-block;
-    margin-top: 7px;
-    margin-bottom: 7px;
+img {
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
 }

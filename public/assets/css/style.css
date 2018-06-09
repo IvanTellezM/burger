@@ -1,12 +1,9 @@
-body {
-    background-image: url("../img/food.png");
-    background-repeat: repeat;
+.hero {
+    background-color: #1e8ad2;
 }
 
-li {
-    list-style-type: none;
-}
-
-.jumbotron {
-    color: orange;
+.burger-name {
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }

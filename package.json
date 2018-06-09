@@ -1,26 +1,26 @@
 {
-  "name": "burger",
-  "version": "1.0.0",
-  "description": "HW Week 8",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/IvanTellezM/burger.git"
-  },
-  "author": "Ivan Tellez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/IvanTellezM/burger/issues"
-  },
-  "homepage": "https://github.com/IvanTellezM/burger#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.10",
-    "mysql": "^2.15.0"
-  }
+    "name": "burger",
+    "version": "1.0.0",
+    "description": "Buger eating application with Node.js, Express, Handlebars, and MySQL",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IvanTellezM/burger.git"
+    },
+    "author": "Ivan Tellez",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/IvanTellezM/burger/issues"
+    },
+    "homepage": "https://github.com/IvanTellezM/burger#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.3",
+        "express-handlebars": "^3.0.0",
+        "method-override": "^2.3.10",
+        "mysql": "^2.15.0"
+    }
 }

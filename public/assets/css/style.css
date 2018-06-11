@@ -3,3 +3,7 @@ img {
     height: auto;
     object-fit: contain;
 }
+
+body {
+    text-align: center;
+}
